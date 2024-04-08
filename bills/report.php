@@ -19,6 +19,8 @@
     $NameCustomer = $result[0]['Name'];
     $LastCustomer = $result[0]['Last_Name'];
 
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
