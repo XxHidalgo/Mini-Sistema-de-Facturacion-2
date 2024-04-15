@@ -1,0 +1,419 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 15-04-2024 a las 14:06:33
+-- Versión del servidor: 10.4.10-MariaDB
+-- Versión de PHP: 7.3.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `msf`
+--
+CREATE DATABASE IF NOT EXISTS `msf` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `msf`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bills`
+--
+
+DROP TABLE IF EXISTS `bills`;
+CREATE TABLE IF NOT EXISTS `bills` (
+  `Id_Bills` int(11) NOT NULL AUTO_INCREMENT,
+  `Cod_Customer` int(11) NOT NULL,
+  `Date` datetime NOT NULL,
+  `Total` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`Id_Bills`),
+  KEY `Fk_Cod_customers` (`Cod_Customer`)
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `bills`
+--
+
+INSERT INTO `bills` (`Id_Bills`, `Cod_Customer`, `Date`, `Total`) VALUES
+(25, 7, '2024-04-01 14:23:26', '620'),
+(26, 2, '2024-04-01 15:04:45', '40'),
+(27, 2, '2024-04-01 15:05:14', '40'),
+(28, 7, '2024-04-01 15:05:30', '180'),
+(29, 3, '2024-04-01 15:08:14', '40'),
+(30, 7, '2024-04-01 15:08:47', '180'),
+(31, 3, '2024-04-01 15:09:16', '180'),
+(32, 3, '2024-04-01 15:10:05', '180'),
+(33, 14, '2024-04-01 15:10:16', '40'),
+(34, 14, '2024-04-01 15:12:53', '40'),
+(35, 14, '2024-04-01 15:13:05', '40'),
+(36, 3, '2024-04-01 15:14:26', '180'),
+(37, 7, '2024-04-01 15:20:01', '180'),
+(38, 7, '2024-04-01 15:20:13', '180'),
+(39, 7, '2024-04-01 15:22:29', '180'),
+(40, 7, '2024-04-01 15:23:15', '180'),
+(41, 7, '2024-04-01 15:33:18', '40'),
+(42, 7, '2024-04-01 15:33:50', '40'),
+(43, 2, '2024-04-01 15:34:09', '40'),
+(44, 3, '2024-04-01 15:34:30', '180'),
+(45, 3, '2024-04-08 08:37:37', '220'),
+(46, 7, '2024-04-08 09:37:06', '180'),
+(47, 2, '2024-04-08 09:42:32', '40'),
+(48, 3, '2024-04-08 09:47:50', '40'),
+(49, 7, '2024-04-08 09:48:08', '40'),
+(50, 3, '2024-04-08 09:50:35', '180'),
+(51, 3, '2024-04-08 09:51:09', '180'),
+(52, 8, '2024-04-08 09:56:13', '180'),
+(53, 3, '2024-04-08 10:03:41', '40'),
+(54, 10, '2024-04-08 10:03:56', '40'),
+(55, 8, '2024-04-08 10:06:24', '40'),
+(56, 3, '2024-04-08 10:08:34', '40'),
+(57, 3, '2024-04-08 10:09:33', '180'),
+(58, 3, '2024-04-08 10:10:41', '180'),
+(59, 3, '2024-04-08 10:10:50', '180'),
+(60, 7, '2024-04-08 10:11:23', '180'),
+(61, 8, '2024-04-08 10:16:10', '40'),
+(62, 3, '2024-04-08 10:16:25', '180'),
+(63, 2, '2024-04-08 10:17:38', '40'),
+(64, 7, '2024-04-08 10:18:48', '180'),
+(65, 7, '2024-04-08 10:20:54', '19980'),
+(66, 3, '2024-04-08 10:21:20', '40'),
+(67, 8, '2024-04-08 10:22:12', '220'),
+(68, 7, '2024-04-08 10:24:26', '40'),
+(69, 2, '2024-04-08 11:44:30', '180'),
+(70, 2, '2024-04-08 11:47:05', '180'),
+(71, 2, '2024-04-08 13:04:27', '180'),
+(72, 3, '2024-04-08 13:09:22', '80'),
+(73, 2, '2024-04-08 13:10:06', '180'),
+(74, 3, '2024-04-08 13:37:45', '40'),
+(75, 3, '2024-04-08 13:39:09', '180'),
+(76, 8, '2024-04-08 13:40:16', '180'),
+(77, 2, '2024-04-08 13:40:59', '40'),
+(78, 3, '2024-04-08 13:43:08', '180'),
+(79, 2, '2024-04-08 13:43:22', '180'),
+(80, 8, '2024-04-08 13:47:39', '4700'),
+(81, 10, '2024-04-08 13:48:37', '1180'),
+(82, 7, '2024-04-08 13:51:35', '830'),
+(83, 7, '2024-04-08 13:52:34', '5040'),
+(84, 7, '2024-04-08 13:53:35', '40'),
+(85, 3, '2024-04-08 13:54:10', '2510'),
+(86, 7, '2024-04-08 13:55:08', '400'),
+(87, 7, '2024-04-08 13:59:11', '40'),
+(88, 3, '2024-04-08 14:00:54', '440'),
+(89, 3, '2024-04-08 14:08:50', '40'),
+(90, 7, '2024-04-08 14:09:00', '180'),
+(91, 3, '2024-04-08 14:11:45', '180'),
+(92, 3, '2024-04-08 14:14:31', '1440'),
+(93, 3, '2024-04-08 14:16:00', '40'),
+(94, 7, '2024-04-08 14:17:20', '180'),
+(95, 8, '2024-04-08 14:17:53', '40'),
+(96, 7, '2024-04-08 14:23:39', '40'),
+(97, 3, '2024-04-08 14:24:42', '180'),
+(98, 3, '2024-04-08 14:25:29', '20'),
+(99, 3, '2024-04-08 14:27:48', '360'),
+(100, 10, '2024-04-08 14:33:17', '40'),
+(101, 3, '2024-04-08 14:37:12', '40'),
+(102, 10, '2024-04-08 14:39:52', '60'),
+(103, 3, '2024-04-08 14:41:49', '820'),
+(104, 7, '2024-04-08 14:45:27', '400'),
+(105, 10, '2024-04-08 14:47:48', '580'),
+(106, 3, '2024-04-08 15:38:28', '1120'),
+(107, 3, '2024-04-08 15:55:38', '40'),
+(108, 8, '2024-04-08 16:10:51', '400'),
+(109, 8, '2024-04-08 16:18:52', '40'),
+(110, 2, '2024-04-08 16:19:58', '40'),
+(111, 8, '2024-04-08 16:21:07', '40'),
+(112, 8, '2024-04-08 16:22:57', '40'),
+(113, 10, '2024-04-08 16:23:17', '40'),
+(114, 16, '2024-04-08 16:28:28', '890'),
+(115, 8, '2024-04-08 16:31:44', '7650'),
+(116, 3, '2024-04-08 16:39:03', '2660'),
+(117, 1, '2024-04-08 16:48:05', '7380');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `bills_detail`
+--
+
+DROP TABLE IF EXISTS `bills_detail`;
+CREATE TABLE IF NOT EXISTS `bills_detail` (
+  `Id_Detail` int(11) NOT NULL AUTO_INCREMENT,
+  `Cod_Bills` int(11) NOT NULL,
+  `Cod_Product` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL,
+  `Subtotal` decimal(10,0) NOT NULL,
+  PRIMARY KEY (`Id_Detail`),
+  KEY `Fk_Cod_product` (`Cod_Product`),
+  KEY `Fk_Cod_bill` (`Cod_Bills`)
+) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `bills_detail`
+--
+
+INSERT INTO `bills_detail` (`Id_Detail`, `Cod_Bills`, `Cod_Product`, `Quantity`, `Subtotal`) VALUES
+(7, 25, 1, 2, '180'),
+(8, 25, 2, 2, '40'),
+(9, 26, 2, 2, '40'),
+(10, 27, 2, 2, '40'),
+(11, 28, 1, 2, '180'),
+(12, 29, 2, 2, '40'),
+(13, 30, 1, 2, '180'),
+(14, 31, 1, 2, '180'),
+(15, 32, 1, 2, '180'),
+(16, 33, 2, 2, '40'),
+(17, 34, 2, 2, '40'),
+(18, 35, 2, 2, '40'),
+(19, 36, 1, 2, '180'),
+(20, 37, 1, 2, '180'),
+(21, 38, 1, 2, '180'),
+(22, 39, 1, 2, '180'),
+(23, 40, 1, 2, '180'),
+(24, 41, 2, 2, '40'),
+(25, 42, 2, 2, '40'),
+(26, 43, 2, 2, '40'),
+(27, 44, 1, 2, '180'),
+(28, 45, 2, 2, '40'),
+(29, 45, 1, 2, '180'),
+(30, 46, 1, 2, '180'),
+(31, 47, 2, 2, '40'),
+(32, 48, 2, 2, '40'),
+(33, 49, 2, 2, '40'),
+(34, 50, 1, 2, '180'),
+(35, 51, 1, 2, '180'),
+(36, 52, 1, 2, '180'),
+(37, 53, 2, 2, '40'),
+(38, 54, 2, 2, '40'),
+(39, 55, 2, 2, '40'),
+(40, 56, 2, 2, '40'),
+(41, 57, 1, 2, '180'),
+(42, 58, 1, 2, '180'),
+(43, 59, 1, 2, '180'),
+(44, 60, 1, 2, '180'),
+(45, 61, 2, 2, '40'),
+(46, 62, 1, 2, '180'),
+(47, 63, 2, 2, '40'),
+(48, 64, 1, 2, '180'),
+(49, 65, 1, 222, '19980'),
+(50, 66, 2, 2, '40'),
+(51, 67, 1, 2, '180'),
+(52, 67, 2, 2, '40'),
+(53, 68, 2, 2, '40'),
+(54, 69, 1, 2, '180'),
+(55, 70, 1, 2, '180'),
+(56, 71, 1, 2, '180'),
+(57, 72, 2, 4, '80'),
+(58, 73, 1, 2, '180'),
+(59, 74, 2, 2, '40'),
+(60, 75, 1, 2, '180'),
+(61, 76, 1, 2, '180'),
+(62, 77, 2, 2, '40'),
+(63, 78, 1, 2, '180'),
+(64, 79, 1, 2, '180'),
+(65, 80, 2, 23, '460'),
+(66, 80, 4, 23, '2070'),
+(67, 80, 1, 23, '2070'),
+(68, 80, 3, 23, '4600'),
+(69, 81, 1, 2, '180'),
+(70, 81, 3, 2, '400'),
+(71, 82, 1, 7, '630'),
+(72, 82, 3, 7, '1400'),
+(73, 83, 2, 2, '40'),
+(74, 83, 3, 25, '5000'),
+(75, 84, 2, 2, '40'),
+(76, 85, 2, 2, '40'),
+(77, 85, 3, 2, '400'),
+(78, 85, 4, 23, '2070'),
+(79, 86, 3, 20, '4000'),
+(80, 87, 2, -2, '-40'),
+(81, 88, 2, 2, '40'),
+(82, 88, 3, -2, '-400'),
+(83, 89, 2, 2, '40'),
+(84, 90, 1, 2, '180'),
+(85, 91, 1, 2, '180'),
+(86, 92, 2, 2, '40'),
+(87, 92, 3, 1, '200'),
+(88, 93, 2, 2, '40'),
+(89, 94, 1, 2, '180'),
+(90, 95, 2, 2, '40'),
+(91, 96, 2, 2, '40'),
+(92, 97, 1, 2, '180'),
+(93, 98, 2, 1, '20'),
+(94, 99, 1, 4, '360'),
+(95, 100, 2, 2, '40'),
+(96, 101, 2, 2, '40'),
+(97, 102, 2, 3, '60'),
+(98, 103, 2, 2, '40'),
+(99, 103, 4, 2, '180'),
+(100, 103, 3, 3, '600'),
+(101, 104, 3, 2, '400'),
+(102, 105, 3, 2, '400'),
+(103, 105, 4, 2, '180'),
+(104, 106, 2, 56, '1120'),
+(105, 107, 2, 2, '40'),
+(106, 108, 3, 2, '400'),
+(107, 109, 2, 2, '40'),
+(108, 110, 2, 2, '40'),
+(109, 111, 2, 2, '40'),
+(110, 112, 2, 2, '40'),
+(111, 113, 2, 2, '40'),
+(112, 114, 4, 5, '450'),
+(113, 114, 3, 2, '400'),
+(114, 114, 2, 2, '40'),
+(115, 115, 3, 6, '1200'),
+(116, 115, 6, 2, '2400'),
+(117, 115, 4, 3, '270'),
+(118, 115, 1, 2, '180'),
+(119, 115, 5, 4, '3600'),
+(120, 116, 1, 2, '180'),
+(121, 116, 2, 4, '80'),
+(122, 116, 6, 2, '2400'),
+(123, 117, 4, 2, '180'),
+(124, 117, 5, 8, '7200');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE IF NOT EXISTS `categories` (
+  `Id_Categories` int(11) NOT NULL AUTO_INCREMENT,
+  `Description` varchar(40) NOT NULL,
+  `Status` bit(1) NOT NULL,
+  PRIMARY KEY (`Id_Categories`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`Id_Categories`, `Description`, `Status`) VALUES
+(1, 'Futuristico', b'0'),
+(2, 'Casual', b'1'),
+(3, 'Deportivo', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `customers`
+--
+
+DROP TABLE IF EXISTS `customers`;
+CREATE TABLE IF NOT EXISTS `customers` (
+  `Id_Customer` int(11) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(30) NOT NULL,
+  `Last_Name` varchar(30) NOT NULL,
+  `Number` varchar(15) NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `License` varchar(15) NOT NULL,
+  `Status` bit(1) NOT NULL,
+  PRIMARY KEY (`Id_Customer`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `customers`
+--
+
+INSERT INTO `customers` (`Id_Customer`, `Name`, `Last_Name`, `Number`, `Email`, `License`, `Status`) VALUES
+(1, 'Josue', 'Hidalgo Luna', '829-528-3357', 'josue01.hidalgo@gmail.com', '402-4433194-4', b'1'),
+(2, 'Juan Luis', 'Guerra', '809-234-9897', 'juanluisguerra@gmail.com', '203-2313998-0', b'1'),
+(3, 'Johanaa', 'Camesaaas', '809-234-1234', 'jhoancamesa123@gmail.com', '402-3456784-4', b'1'),
+(7, 'juana', 'carol', '809-235-2352', 'juanacarol20@gmail.com', '403-2345246-2', b'0'),
+(8, 'carmen', 'de la cruz', '809-234-2352', 'carmendelacruz@gmail.com', '898-2345678-9', b'1'),
+(10, 'samuel', 'canesa', '809-235-2368', 'samuelcanesa123@gmail.com', '879-2345679-0', b'1'),
+(14, 'Catalina', 'mejia', '809-234-5312', 'catalinamejia120@gmail.com', '402-3344562-4', b'1'),
+(15, 'samuel', 'alcantara', '809-234-23442', 'samuelalcantara@gmail.com2', '402-3123232-12', b'1'),
+(16, 'Justin', 'Hernandez', '809-232-2312', 'justinhernandez23@gmail.com', '402-3232456-5', b'1'),
+(17, 'Johan', '', '809-223-2312', 'jhanluciano@gmail.com', '402-2313412-2', b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `products`
+--
+
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE IF NOT EXISTS `products` (
+  `Id_Product` int(11) NOT NULL AUTO_INCREMENT,
+  `Cod_Category` int(11) NOT NULL,
+  `Description` varchar(40) NOT NULL,
+  `Price` decimal(10,0) NOT NULL,
+  `Stock` int(11) NOT NULL,
+  PRIMARY KEY (`Id_Product`),
+  KEY `Fk_Cod_Category` (`Cod_Category`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`Id_Product`, `Cod_Category`, `Description`, `Price`, `Stock`) VALUES
+(1, 1, 'Camisa de cuadros', '90', 62),
+(2, 3, 'Vestido', '20', 4),
+(3, 2, 'Tacones', '200', 5),
+(4, 1, 'Medias', '90', 87),
+(5, 3, 'Guantes', '900', 88),
+(6, 2, 'Zapatos', '1200', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `Id_User` int(11) NOT NULL AUTO_INCREMENT,
+  `Username` varchar(30) NOT NULL,
+  `Password` varchar(30) NOT NULL,
+  `Status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`Id_User`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`Id_User`, `Username`, `Password`, `Status`) VALUES
+(1, 'hidalgo', '123', 1);
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `bills`
+--
+ALTER TABLE `bills`
+  ADD CONSTRAINT `Fk_Cod_customers` FOREIGN KEY (`Cod_Customer`) REFERENCES `customers` (`Id_Customer`);
+
+--
+-- Filtros para la tabla `bills_detail`
+--
+ALTER TABLE `bills_detail`
+  ADD CONSTRAINT `Fk_Cod_bill` FOREIGN KEY (`Cod_Bills`) REFERENCES `bills` (`Id_Bills`),
+  ADD CONSTRAINT `Fk_Cod_bills` FOREIGN KEY (`Cod_bills`) REFERENCES `bills` (`Id_Bills`),
+  ADD CONSTRAINT `Fk_Cod_product` FOREIGN KEY (`Cod_Product`) REFERENCES `products` (`Id_Product`);
+
+--
+-- Filtros para la tabla `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT `Fk_Cod_Category` FOREIGN KEY (`Cod_Category`) REFERENCES `categories` (`Id_Categories`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
